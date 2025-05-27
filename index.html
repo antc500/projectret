@@ -102,40 +102,17 @@
 
 
 
-
-                <footer>
+<div id="footer-container"></div>
+<!--                <footer>
                     <section class="footer-background">
                         <img src="assets/images/footer-background.png" alt="footer background">
                         <section class="footer-block">
 
                         </section>
                     </section>
-                </footer>
+                </footer>-->
             </main>
 
-<!--<script>
-  function toggleMenu() {
-    document.getElementById('mobileMenu').classList.toggle('active');
-  }
-</script>-->
-
-<script>
-  fetch('header.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('header-container').innerHTML = data;
-      initMobileMenu();
-    });
-
-  function initMobileMenu() {
-    const hamburger = document.querySelector('.hamburger');
-    if (hamburger) {
-      hamburger.addEventListener('click', () => {
-        document.getElementById('mobileMenu').classList.toggle('active');
-      });
-    }
-  }
-</script>
-
+            <script src="script.js"></script>
 </body>
 </html>
