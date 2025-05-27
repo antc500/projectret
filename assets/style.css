@@ -171,6 +171,12 @@ body {
 }
 }
 
+.indent {
+  display: block;
+  height: 65px;
+  background-color: #ffffff00;
+}
+
 .main-text-banner {
     display: block;
     width: 100vw;
