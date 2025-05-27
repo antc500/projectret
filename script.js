@@ -19,3 +19,9 @@
     .then(data => {
         document.getElementById('footer-container').innerHTML = data;
     });
+
+  fetch('product-card.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('product-card-container').innerHTML = data;
+    });
