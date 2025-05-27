@@ -7,53 +7,7 @@
         <link rel="stylesheet" href="assets/style.css">
     </head>
 <body>
-<header class="site-header">
-  <div class="header-inner">
-    <!-- ЛОГОТИП СЛЕВА -->
-    <div class="logo">
-      <img src="assets/logo/logo justanotherfilm.png" alt="Just Another Film">
-    </div>
-
-    <!-- МЕНЮ ПО ЦЕНТРУ -->
-    <nav class="desctop-menu">
-      <ul>
-        <li><a href="#">Меню 1</a></li>
-        <li><a href="#">Меню 2</a></li>
-        <li><a href="#">Меню 3</a></li>
-        <li><a href="#">Меню 4</a></li>
-        <li><a href="#">Меню 5</a></li>
-      </ul>
-    </nav>
-
-    <!-- ИКОНКИ СПРАВА (десктоп) -->
-    <div class="header-icons">
-      <img src="assets/icons/search.png" alt="Поиск" class="icon">
-      <img src="assets/icons/cart.png" alt="Корзина" class="icon">
-    </div>
-
-    <!-- ГАМБУРГЕР (мобильный) -->
-    <div class="hamburger" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </div>
-
-  <!-- ВЫПАДАЮЩЕЕ МЕНЮ ДЛЯ МОБИЛЬНОЙ ВЕРСИИ -->
-  <div class="mobile-menu" id="mobileMenu">
-      <ul>
-        <li><a href="#">Меню 1</a></li>
-        <li><a href="#">Меню 2</a></li>
-        <li><a href="#">Меню 3</a></li>
-        <li><a href="#">Меню 4</a></li>
-        <li><a href="#">Меню 5</a></li>
-        <div class="second-mobile-menu">
-        <li><a href="#">Search</a></li>
-        <li><a href="#">Cart</a></li>
-        </div>
-      </ul>
-  </div>
-</header>
+<div id="header-container"></div>
 
 
             <main>
@@ -83,6 +37,7 @@
                     </div>
                 </section>
 
+                <!--3 карточки-->
                 <section class="three-image-row">
                     <div>  
                         <img src="assets/images/1f3.jpg" alt="Изображение 1">
@@ -97,6 +52,28 @@
                         <h4 class="subtitle">Promo 3</h4>
                     </div>
                 </section>
+
+                <!--3 карточки колонки
+                <div class="container">
+  <div class="row">
+        <div class="col col-4"><div>  
+                        <img src="assets/images/1f3.jpg" alt="Изображение 1">
+                        <h4 class="subtitle">Promo 1</h4>
+                    </div></div>
+        <div class="col col-4"><div>  
+                        <img src="assets/images/1f3.jpg" alt="Изображение 1">
+                        <h4 class="subtitle">Promo 1</h4>
+                    </div></div>
+        <div class="col col-4"><div>  
+                        <img src="assets/images/1f3.jpg" alt="Изображение 1">
+                        <h4 class="subtitle">Promo 1</h4>
+                    </div></div>
+  </div>
+  </div>-->        
+
+
+
+
 
                 <div class="marquee">
                     <div class="marquee-content">
@@ -135,10 +112,30 @@
                 </footer>
             </main>
 
-<script>
+<!--<script>
   function toggleMenu() {
     document.getElementById('mobileMenu').classList.toggle('active');
   }
+</script>-->
+
+// Подключение header.html
+<script>('header.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('header-container').innerHTML = data;
+    // Активируем меню после вставки
+    initMobileMenu();
+  });
+
+// Функция, которая активирует гамбургер
+function initMobileMenu() {
+  const hamburger = document.querySelector('.hamburger');
+  if (hamburger) {
+    hamburger.addEventListener('click', () => {
+      document.getElementById('mobileMenu').classList.toggle('active');
+    });
+  }
+}
 </script>
 
 </body>
