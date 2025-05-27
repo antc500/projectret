@@ -19,7 +19,7 @@ body {
 .site-header {
   width: 100%;
   border-bottom: 1px solid #000;
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 1000; /* чтобы хеддер был поверх других элементов */
   background-color: white;
