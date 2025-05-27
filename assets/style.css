@@ -16,6 +16,8 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+
+
 .site-header {
   width: 100%;
   border-bottom: 1px solid #000;
@@ -175,6 +177,7 @@ body {
   display: block;
   height: 65px;
   background-color: #ffffff00;
+  style: none; /* чтобы не было маркера */
 }
 
 .main-text-banner {
