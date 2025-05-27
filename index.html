@@ -118,24 +118,22 @@
   }
 </script>-->
 
-// Подключение header.html
-<script>('header.html')
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById('header-container').innerHTML = data;
-    // Активируем меню после вставки
-    initMobileMenu();
-  });
-
-// Функция, которая активирует гамбургер
-function initMobileMenu() {
-  const hamburger = document.querySelector('.hamburger');
-  if (hamburger) {
-    hamburger.addEventListener('click', () => {
-      document.getElementById('mobileMenu').classList.toggle('active');
+<script>
+  fetch('header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header-container').innerHTML = data;
+      initMobileMenu();
     });
+
+  function initMobileMenu() {
+    const hamburger = document.querySelector('.hamburger');
+    if (hamburger) {
+      hamburger.addEventListener('click', () => {
+        document.getElementById('mobileMenu').classList.toggle('active');
+      });
+    }
   }
-}
 </script>
 
 </body>
